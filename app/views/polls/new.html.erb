@@ -1,0 +1,22 @@
+<div class="container text-center">
+  <h2>Create New Poll</h2>
+  <%= bootstrap_form_for(@poll, local: true) do |form| %>
+  <%= form.text_field :title, :placeholder=>"Poll Title"%>
+  <% if @poll.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@poll.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @poll.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <%= form.submit %>
+<% end %>
+
+</div>

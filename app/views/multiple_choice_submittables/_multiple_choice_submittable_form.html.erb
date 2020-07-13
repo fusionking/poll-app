@@ -1,0 +1,13 @@
+<h4>Add Multiple Choice Options</h4>
+<%= form.fields_for(:submittable) do |submittable_fields| -%>
+  <%= submittable_fields.fields_for(
+    :options,
+    submittable.options_for_form
+  ) do |option_fields| -%>
+	<%= option_fields.text_field :text %>
+  <% end -%>
+<% end -%>
+
+<button class="btn btn-dark">
+    <%= link_to 'Back', poll_path(poll.id) %>
+</button>

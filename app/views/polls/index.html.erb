@@ -1,0 +1,29 @@
+<div class="container pb-artist-wrap">
+    <div class="row">
+        <div class="col-md-12 col-md-offset-4">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h3><strong>All Polls</strong></h3>
+                </div>
+                <div class="panel-body" style="padding: 0;">
+                    <table class="table table-striped">
+                        <tbody>
+                        	<% @polls.each do |poll| -%>
+		    					<tr>
+		    						<td><%= link_to poll.title, poll %></td>
+		    					</tr>
+		  					<% end -%>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                 
+                    <button class="btn btn-warning pb-arist-albums">
+                    	<%= link_to 'Create a New Poll', [:new, :poll] %>
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

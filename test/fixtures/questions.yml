@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first:
+  title: First Question
+  poll: first
+  submittable: one
+  submittable_type: MultipleChoiceSubmittable
+
+second:
+  title: What is our purpose in life?
+  poll: first
+  submittable: one
+  submittable_type: OpenSubmittable
