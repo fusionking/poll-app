@@ -2,11 +2,17 @@
     <div class="row">
         <div class="col-md-12 col-md-offset-4">
             <div class="panel panel-warning">
-                <div class="panel-heading">
-                    <h3><strong><%= @poll.title %></strong></h3>
+                <div class="panel-heading mt-4">
+                    <h3><strong>"<%= @poll.title %>" Statistics</strong></h3>
                 </div>
                 <div class="panel-body" style="padding: 0;">
                     <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Statistic Type</th>
+                              <th scope="col">Number</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
                                 <td><strong># Of Questions</strong></td>
@@ -25,15 +31,21 @@
                 </div>
                 <br>
                 <div class="panel-heading">
-                    <h3><strong>Poll Statistics</strong></h3>
+                    <h3><strong>"<%= @poll.title %>" Responses</strong></h3>
                 </div>
                 <div class="panel-body" style="padding: 0;">
                     <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Question</th>
+                              <th scope="col">Responses</th>
+                            </tr>
+                        </thead>
                         <tbody>
    							<% @questions.each do |question| %>
    								<tr>
-   									<th><%= question.title %></th>
-   									<th><%= question.submittable.breakdown %></th>
+   									<th scope="row"><%= question.title %></th>
+   									<th scope="row"><%= question.submittable.breakdown %></th>
    								</tr>
    							<% end %>
                         </tbody>

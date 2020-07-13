@@ -9,7 +9,7 @@
 	  		<p class="question-title"><%= index.next %> . <%= question.title %></p>
 	  		<div class="form-group">
 		    	<% if question.submittable_type == 'MultipleChoiceSubmittable'%>
-			        <% question.submittable.options.each do |option| %>
+			        <% question.submittable.options_for_form.each do |option| %>
 	              	<%= form.radio_button :option, option.text, :value => option.text, name: "question_#{question.id}" %>
 						   <%= label_tag(:option, option.text) %>
 			      	<% end %>

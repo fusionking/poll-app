@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "bootstrap_form", "~> 4.0"
 gem 'simplecov', require: false, group: :test
+gem 'rails-controller-testing'

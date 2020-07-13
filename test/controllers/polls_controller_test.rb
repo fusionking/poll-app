@@ -31,4 +31,12 @@ class PollsControllerTest < ActionDispatch::IntegrationTest
   	assert_response :success
   	assert_match 'Create Poll', @response.body
   end
+
+  test "should not create a Poll without a title" do
+    assert_no_difference('Poll.count') do
+      post polls_url, params: { poll: { some_other_key: 'I am a new poll!' } }
+    end
+    assert_template :new
+
+   end
 end
