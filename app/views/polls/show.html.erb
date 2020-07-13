@@ -1,4 +1,4 @@
-<div class="container pb-artist-wrap">
+<div class="container pb-poll-wrap">
     <div class="row">
         <div class="col-md-12 col-md-offset-4">
             <div class="panel panel-warning">
@@ -41,10 +41,10 @@
                 </div>
                 <br>
                 <div class="panel-footer">
-                    <button class="btn btn-success pb-artist-albums">
+                    <button class="btn btn-success pb-poll-items">
                     	<%= link_to 'Fill Out The Poll', new_poll_response_path(poll_id: @poll) %>
                     </button>
-                    <button class="btn btn-warning pb-arist-albums">
+                    <button class="btn btn-warning pb-poll-items">
                     	<%= link_to('Add Multiple Choice Question', 
                     			    new_poll_question_path(
                     			    	@poll, 
@@ -52,7 +52,7 @@
                     			    		submittable_type: 'MultipleChoiceSubmittable' 
                     			    	}))%>
                     </button>
-                    <button class="btn btn-warning pb-arist-albums">
+                    <button class="btn btn-warning pb-poll-items">
                     	<%= link_to('Add Open Ended Question', 
                     			    new_poll_question_path(
                     			    	@poll, 

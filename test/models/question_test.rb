@@ -13,20 +13,20 @@ class QuestionTest < ActiveSupport::TestCase
   test "should raise an error if a wrong submittable type is provided" do
   	 question = Question.new(title: 'Title')
   	 assert_raises(NameError) do
-  	 	question.build_submittable('NonExistentClass', {})
+  	 	question.build_submittable('NonExistentClass')
   	 end
   end
 
   test "should not save a Question without a poll" do
   	question = Question.new(title: 'Title', submittable_type: 'MultipleChoiceSubmittable')
-  	question.build_submittable('MultipleChoiceSubmittable', {})
+  	question.build_submittable('MultipleChoiceSubmittable')
   	assert_not question.save, "Saved the question without a poll"
   end
 
   test "should save a Question with full fields" do
   	poll = Poll.create(title: 'New Poll')
   	question = Question.new(title: 'Title', submittable_type: 'MultipleChoiceSubmittable')
-  	question.build_submittable('MultipleChoiceSubmittable', {})
+  	question.build_submittable('MultipleChoiceSubmittable')
   	question.poll = poll
   	assert question.save, "Saved the question without a poll"
   end

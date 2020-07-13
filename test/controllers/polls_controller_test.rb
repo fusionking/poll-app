@@ -18,7 +18,6 @@ class PollsControllerTest < ActionDispatch::IntegrationTest
   	end
  
   	assert_redirected_to poll_path(Poll.last)
-  	assert_equal 'Poll was successfully created.', flash[:notice]
    end
 
   test "should show Poll" do
