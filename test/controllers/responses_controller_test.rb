@@ -4,7 +4,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @first = polls(:first)
   end
-
+  
   test "should get new poll form" do
     get new_poll_response_path(@first)
     assert_response :success
