@@ -37,7 +37,7 @@ class Question < ApplicationRecord
   # Builds a new associated instance of a Submittable class at run time,
   # based on the type value, which is coming from the request.
   def build_submittable(type)
-    submittable_class = type.sub('Question', 'Submittable').constantize
+    submittable_class = type.constantize
     self.submittable = submittable_class.new(question: self)
   end
 
